@@ -11,10 +11,17 @@ function setup() {
 
 function draw() {
   background(220);
-  circle(x, y, 10);
-  console.log(mouseX,x);
+  let distanciaX;
+  let distanciaY;
+  let distancia;
+  distanciaX = mouseX - x; 
+  distanciaY = mouseY - y;
+  distancia = sqrt(distanciaX*distanciaX + distanciaY*distanciaY);
 
-  if (mouseX == x ) {
+  circle(x, y, 10);
+  console.log(distancia);
+
+  if (mouseX == x && mouseY == y) {
     text("Encontrei!", 200, 200);
     noLoop();
   }
