@@ -12,18 +12,15 @@ function setup() {
 function draw() {
   background(220);
   
-  let distanciaX;
-  let distanciaY;
+  x = x + random(-5, 5);
+  y = y + random(-5, 5);
+  x = constrain(x, 0, 400);
+  y = constrain(y, 0, 400);
+
   let distancia;
-  
-  distanciaX = mouseX - x; 
-  distanciaY = mouseY - y;
-  // distancia = sqrt(distanciaX*distanciaX + distanciaY*distanciaY);
   distancia = dist(mouseX, mouseY, x, y);
 
   circle(mouseX, mouseY, distancia);
-  //circle(x, y, distancia);
-  // console.log(distancia);
 
   if (distancia < 3) {
     text("Encontrei!", 200, 200);
